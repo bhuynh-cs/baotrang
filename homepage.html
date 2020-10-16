@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html
   <head>
-
       <title>BAO TRANG</title>
+
+      <style>
+              #playlist{
+                  list-style: none;
+              }
+              #playlist li a{
+                  color:black;
+                  text-decoration: none;
+                  line-height: 2.0;
+              }
+              #playlist .current-song a{
+                  color:white;
+              }
+          </style>
+
+          <style>
+          			h3 {
+          				color: white;
+          				text-align: center;
+          			}
+          		</style>
+
 
   </head>
 
   <body>
-        <img src="picture03.jpg" width = "100%"">
+<center>
+<h3>
+  <p> <span style="font-size:130%;color:red;">&hearts;</span>             733 days</p>
+</h3>
+<h2>
+<p> Loving you is </p>
+<p> one of the best decisions </p>
+<p> of my life. </p>
+</h2>
+    <style>
+    body {
+      background-image: url("pic.jpg");
+      background-size: cover;
+      height: 50%;
+    }
+    </style>
+
+<audio src="" controls id="audioPlayer">
+  Sorry, your browser doesn't support html5!
+</audio>
+
+<ul id="playlist">
+  <li class="current-song"><a href="HoaHaiDuong.mp3">1. Hoa Hải Đường - Jack</a></li>
+  <li><a href="AiMangCoDon.mp3">2. Ai Mang Cô Đơn Đi - K-ICM, APJ</a></li>
+  <li><a href="BaiNayChillPhet.mp3">3. Bài Này Chill Phết - Đen Vâu</a></li>
+  <li><a href="CoNguoi.mp3">4. Có Người - Vũ Cát Tường</a></li>
+  <li><a href="If.mp3">5. If - Vũ Cát Tường</a></li>
+</ul>
+
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+<script>
+
+  audioPlayer();
+
+  function audioPlayer(){
+     var currentSong = 0;
+     $("#audioPlayer")[0].src = $("#playlist li a")[0];
+     $("#audioPlayer")[0].play();
+     $("#playlist li a").click(function(e){
+        e.preventDefault();
+        $("#audioPlayer")[0].src = this;
+        $("#audioPlayer")[0].play();
+        $("#playlist li").removeClass("current-song");
+         currentSong = $(this).parent().index();
+         $(this).parent().addClass("current-song");
+     });
+
+     $("#audioPlayer")[0].addEventListener("ended", function(){
+        currentSong++;
+         if(currentSong == $("#playlist li a").length)
+             currentSong = 0;
+         $("#playlist li").removeClass("current-song");
+         $("#playlist li:eq("+currentSong+")").addClass("current-song");
+         $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+         $("#audioPlayer")[0].play();
+     });
+ }
+
+</script>
+
+
+</center>
   </body>
 </html>
