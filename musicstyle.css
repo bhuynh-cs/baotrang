@@ -11,7 +11,7 @@ body {
   background: linear-gradient(#33ccff,#ff0066);
   border-radius: 40%;
   animation: animate 1.5s linear infinite;
-  top: 100px;
+  top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -163,7 +163,7 @@ body {
       letter-spacing: 2px;
       font-weight: 600;
       padding: 25px;
-      
+
     }
 
     .header ul li a:hover{
