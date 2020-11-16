@@ -6,6 +6,22 @@
 
       <link rel="stylesheet" href="musicstyle.css">
 
+      <style>
+      #playlist{
+           list-style: none;
+       }
+       #playlist li a{
+           color:#c19b4a;
+           text-decoration: none;
+           line-height: 2.0;
+
+       }
+       #playlist .current-song a{
+           color:#cf5c5c;
+           font-weight: bold;
+       }
+      </style>
+
     </head>
 
   <body>
@@ -36,6 +52,22 @@
       <span></span>
       <span></span>
     </div>
+
+    <audio src="" controls id="audioPlayer">
+      Sorry, your browser doesn't support html5!
+    </audio>
+    <ul id="playlist">
+      <li class="current-song"><a href="music/HoaHaiDuong.mp3">1. Hoa Hải Đường</a></li>
+      <li><a href="music/AiMangCoDon.mp3">2. Ai Mang Cô Đơn Đi</a></li>
+      <li><a href="music/BaiNayChillPhet.mp3">3. Bài Này Chill Phết</a></li>
+      <li><a href="music/CoNguoi.mp3">4. Có Người</a></li>
+      <li><a href="music/If.mp3">5. If</a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="audioPlayer.js"></script>
+    <script>
+      audioPlayer();
+    </script>
 
   </article>
 
